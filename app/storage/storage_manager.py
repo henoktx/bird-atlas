@@ -20,3 +20,7 @@ class IStorageManager(ABC):
     @abstractmethod
     def get(self, search: Optional[str] = None) -> list[Bird]:
         pass
+
+    @abstractmethod
+    def _generate_next_id(self) -> int:
+        pass
