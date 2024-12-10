@@ -18,7 +18,15 @@ class IStorageManager(ABC):
         pass
 
     @abstractmethod
-    def get(self, search: Optional[str] = None) -> list[Bird]:
+    def get(
+            self,
+            scientific_name: Optional[str],
+            common_name: Optional[str],
+            location: Optional[str],
+            average_size: Optional[float],
+            average_weight: Optional[float],
+            life_expectancy: Optional[int]
+    ) -> list[Bird]:
         pass
 
     @abstractmethod
