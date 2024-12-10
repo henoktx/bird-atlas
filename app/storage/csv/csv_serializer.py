@@ -18,7 +18,7 @@ class CSVSerializer:
                 bird.photo]
 
     @staticmethod
-    def deserializer(self, serialized_bird: list[any]) -> Bird:
+    def deserializer(serialized_bird: list[any]) -> Bird:
         return Bird(
             id=serialized_bird[0],
             scientific_name=serialized_bird[1],
