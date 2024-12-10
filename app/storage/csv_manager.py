@@ -4,7 +4,7 @@ from typing import Optional
 
 from app.model.Bird import Bird
 from app.storage.storage_manager import IStorageManager
-from app.storage.csv.csv_serializer import CSVSerializer
+from app.util.csv_serializer import CSVSerializer
 from app.util.match_attribute import Matcher
 
 CSV_HEADERS = list(Bird.__annotations__.keys())
