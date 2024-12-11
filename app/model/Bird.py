@@ -11,11 +11,10 @@ class Bird(BaseModel):
         from_attributes=True,
     )
 
-    id: int
     scientific_name: str
     common_name: str
     location: str
-    average_size: Optional[float]
-    average_weight: Optional[float]
-    life_expectancy: Optional[int]
-    photo: Optional[str]
+    average_size: Optional[float] = None
+    average_weight: Optional[float] = None
+    life_expectancy: Optional[int] = None
+    photo: Optional[str] = None
