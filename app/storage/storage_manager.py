@@ -1,22 +1,11 @@
 from abc import ABC, abstractmethod
 from typing import Optional
+from zipfile import ZipFile
 
 from app.model.Bird import Bird
 
 
 class IStorageManager(ABC):
-    @abstractmethod
-    def save(self, bird: Bird) -> Bird:
-        pass
-
-    @abstractmethod
-    def update(self, bird: Bird) -> Bird:
-        pass
-
-    @abstractmethod
-    def delete(self, bird_id: int) -> None:
-        pass
-
     @abstractmethod
     def get(
             self,
@@ -30,5 +19,21 @@ class IStorageManager(ABC):
         pass
 
     @abstractmethod
-    def _generate_next_id(self) -> int:
+    def count_birds(self) -> int:
+        pass
+
+    @abstractmethod
+    def save(self, bird: Bird) -> Bird:
+        pass
+
+    @abstractmethod
+    def update(self, old_scientific_name: str, bird: Bird) -> Bird:
+        pass
+
+    @abstractmethod
+    def delete(self, scientific_name: str) -> None:
+        pass
+
+    @abstractmethod
+    def scientific_name_exists(self, scientific_name: str) -> bool:
         pass
